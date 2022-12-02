@@ -1,0 +1,19 @@
+{
+  "name": "hlc-gestionar_reservas_vacacionales",
+  "version": "1.0.0",
+  "description": "API para gestionar reservas vacacionales",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pablo-Miguel/HLC-Gestionar_reservas_vacacionales.git"
+  },
+  "author": "Pablo-Miguel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pablo-Miguel/HLC-Gestionar_reservas_vacacionales/issues"
+  },
+  "homepage": "https://github.com/Pablo-Miguel/HLC-Gestionar_reservas_vacacionales#readme"
+}
