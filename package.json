@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/Pablo-Miguel/HLC-Gestionar_reservas_vacacionales/issues"
   },
-  "homepage": "https://github.com/Pablo-Miguel/HLC-Gestionar_reservas_vacacionales#readme"
+  "homepage": "https://github.com/Pablo-Miguel/HLC-Gestionar_reservas_vacacionales#readme",
+  "dependencies": {
+    "chalk": "^5.1.2",
+    "file-system": "^2.2.2",
+    "yargs": "^17.6.2"
+  }
 }
