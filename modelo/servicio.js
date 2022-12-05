@@ -8,7 +8,7 @@ module.exports =  class Servicio{
         const jsonList = fs.readFileSync("./reservas.json");
         if(JSON.parse(jsonList).length != 0){
             JSON.parse(jsonList).forEach(element => {
-                this._listaReservas.push(new Reserva(element._id_reserva, element._latitud, element._longitud, element._clima, element._nombre, new Date(element._fecha_reserva.split("T")[0])));
+                this._listaReservas.push(new Reserva(element._id_reserva, element._latitud, element._longitud, element._clima, element._temperatura, element._humedad, element._nombre, new Date(element._fecha_reserva.split("T")[0])));
             });
         }
     }
@@ -17,9 +17,9 @@ module.exports =  class Servicio{
         return [...this._listaReservas];
     }
 
-    anadirReserva(latitud, longitud, clima, nombre, fecha_reserva){
+    anadirReserva(latitud, longitud, clima, temperatura, humedad, nombre, fecha_reserva){
         const lenIni = this._listaReservas.length;
-        this._listaReservas.push(new Reserva(null, latitud, longitud, clima, nombre, new Date(fecha_reserva)));
+        this._listaReservas.push(new Reserva(null, latitud, longitud, clima, temperatura, humedad, nombre, new Date(fecha_reserva)));
         fs.writeFileSync('./reservas.json', JSON.stringify([...this._listaReservas]));
         return this._listaReservas.length - lenIni;
     }

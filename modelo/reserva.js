@@ -2,7 +2,7 @@ const { v4: uuidv4 } = require('uuid');
 
 module.exports = class Reserva{
 
-    constructor(id_reserva, latitud, longitud, clima, nombre, fecha_reserva){
+    constructor(id_reserva, latitud, longitud, clima, temperatura, humedad, nombre, fecha_reserva){
         if(id_reserva == null){
             this._id_reserva = uuidv4();
         } else {
@@ -11,6 +11,8 @@ module.exports = class Reserva{
         this._latitud = latitud;
         this._longitud = longitud;
         this._clima = clima;
+        this._temperatura = temperatura;
+        this._humedad = humedad;
         this._nombre = nombre;
         this._fecha_reserva = fecha_reserva;
     }
@@ -43,6 +45,22 @@ module.exports = class Reserva{
         this._clima = value;
     }
 
+    getTemperatura(){
+        return this._temperatura;
+    }
+
+    setTemperatura(value){
+        this._temperatura = value;
+    }
+
+    getHumedad(){
+        return this._humedad;
+    }
+
+    setHumedad(value){
+        this._humedad = value;
+    }
+
     getNombre(){
         return this._nombre;
     }
@@ -60,7 +78,7 @@ module.exports = class Reserva{
     }
 
     toString(){
-        return "Reserva -> " + this._id_reserva + ":\n   - Latitud: " + this._latitud + "\n   - longitud: " + this._longitud + "\n   - clima: " + this._clima + "\n   - nombre: " + this._nombre + "\n   - fecha_reserva: " + this._fecha_reserva.toLocaleDateString();
+        return "Reserva -> " + this._id_reserva + ":\n   - Latitud: " + this._latitud + "\n   - longitud: " + this._longitud + "\n   - clima: " + this._clima + "\n   - temperatura: " + this._temperatura + "\n   - humedad: " + this._humedad + "\n   - nombre: " + this._nombre + "\n   - fecha_reserva: " + this._fecha_reserva.toLocaleDateString();
     }
 
 }
