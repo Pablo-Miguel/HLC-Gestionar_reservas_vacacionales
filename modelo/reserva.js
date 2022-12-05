@@ -1,6 +1,6 @@
-import { v4 as uuidv4 } from 'uuid';
+const { v4: uuidv4 } = require('uuid');
 
-export default class Reserva{
+module.exports = class Reserva{
 
     constructor(latitud, longitud, clima, nombre, fecha_reserva){
         this._id_reserva = uuidv4();

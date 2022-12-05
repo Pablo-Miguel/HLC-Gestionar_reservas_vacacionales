@@ -2,8 +2,7 @@
   "name": "hlc-gestionar_reservas_vacacionales",
   "version": "1.0.0",
   "description": "API para gestionar reservas vacacionales",
-  "main": "index.js",
-  "type": "module",
+  "main": "console.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
