@@ -1,15 +1,34 @@
-//const fs = require("file-system");
-import Reserva from "./modelo/reserva.js";
+const fs = require("fs");
+const Reserva = require("./reserva");
 
-export default class Servicio{
+module.exports =  class Servicio{
 
     constructor(){
-        this._listaReservas = [
-            new Reserva("36.6864500", "-6.1360600", "Lluvioso", "Pablo", new Date("2022-12-05")),
-            new Reserva("36.6864500", "-6.1360600", "Lluvioso", "Marta", new Date("2022-12-05")),
-            new Reserva("36.6864500", "-6.1360600", "Soleado", "Manu", new Date("2022-12-06")),
-            new Reserva("36.6864500", "-6.1360600", "Muy caluroso", "Carlos", new Date("2022-12-07"))
-        ];
+        this._listaReservas = [];
+        const jsonList = fs.readFileSync("./reservas.json");
+        if(JSON.parse(jsonList).length != 0){
+            JSON.parse(jsonList).forEach(element => {
+                this._listaReservas.push(new Reserva(element._id_reserva, element._latitud, element._longitud, element._clima, element._nombre, new Date(element._fecha_reserva.split("T")[0])));
+            });
+        }
+    }
+
+    getListaReservas(){
+        return [...this._listaReservas];
+    }
+
+    anadirReserva(latitud, longitud, clima, nombre, fecha_reserva){
+        const lenIni = this._listaReservas.length;
+        this._listaReservas.push(new Reserva(null, latitud, longitud, clima, nombre, new Date(fecha_reserva)));
+        fs.writeFileSync('./reservas.json', JSON.stringify([...this._listaReservas]));
+        return this._listaReservas.length - lenIni;
+    }
+
+    borrarReserva(id){
+        const lenIni = this._listaReservas.length;
+        this._listaReservas = this._listaReservas.filter(x => x.getIdReserva() != id);
+        fs.writeFileSync('./reservas.json', JSON.stringify([...this._listaReservas]));
+        return lenIni - this._listaReservas.length;
     }
 
 }

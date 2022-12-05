@@ -1,1 +1,34 @@
-[]
+[
+  {
+    "_id_reserva": "00364837-6cd3-4932-8218-49b1d8cb758c",
+    "_latitud": "36.6864500",
+    "_longitud": "-6.1360600",
+    "_clima": "Lluvioso",
+    "_nombre": "Pablo",
+    "_fecha_reserva": "2022-12-05T00:00:00.000Z"
+  },
+  {
+    "_id_reserva": "3bc55dab-3893-48a2-9c1d-88bcb46c149a",
+    "_latitud": "36.6864500",
+    "_longitud": "-6.1360600",
+    "_clima": "Lluvioso",
+    "_nombre": "Marta",
+    "_fecha_reserva": "2022-12-05T00:00:00.000Z"
+  },
+  {
+    "_id_reserva": "87ff2d70-57d6-4d41-8e5b-71da88d7e838",
+    "_latitud": "36.6864500",
+    "_longitud": "-6.1360600",
+    "_clima": "Soleado",
+    "_nombre": "Manu",
+    "_fecha_reserva": "2022-12-06T00:00:00.000Z"
+  },
+  {
+    "_id_reserva": "f9bb289a-1c1b-4500-a98f-9b6aa2c9ebf3",
+    "_latitud": "36.6864500",
+    "_longitud": "-6.1360600",
+    "_clima": "Muy caluroso",
+    "_nombre": "Carlos",
+    "_fecha_reserva": "2022-12-07T00:00:00.000Z"
+  }
+]

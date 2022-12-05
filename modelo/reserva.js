@@ -2,8 +2,12 @@ const { v4: uuidv4 } = require('uuid');
 
 module.exports = class Reserva{
 
-    constructor(latitud, longitud, clima, nombre, fecha_reserva){
-        this._id_reserva = uuidv4();
+    constructor(id_reserva, latitud, longitud, clima, nombre, fecha_reserva){
+        if(id_reserva == null){
+            this._id_reserva = uuidv4();
+        } else {
+            this._id_reserva = id_reserva;
+        }
         this._latitud = latitud;
         this._longitud = longitud;
         this._clima = clima;
@@ -53,6 +57,10 @@ module.exports = class Reserva{
 
     setFechaReserva(value){
         this._fecha_reserva = value;
+    }
+
+    toString(){
+        return "Reserva -> " + this._id_reserva + ":\n   - Latitud: " + this._latitud + "\n   - longitud: " + this._longitud + "\n   - clima: " + this._clima + "\n   - nombre: " + this._nombre + "\n   - fecha_reserva: " + this._fecha_reserva.toLocaleDateString();
     }
 
 }
